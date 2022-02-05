@@ -5,26 +5,19 @@ const videoType = ".mp4";
 const imageType = "image/*";
 const audioType = ".mp3";
 
-const fileInput = document.getElementById("input");
+const handleAsset = function() {
+    let file = this.element.files[0];
 
-const handleFiles = () => {
-    var fileName = fileInput.files[0].name;
-
-    var assetType = fileName.split(".").pop();
-
-    return assetType;
-};
-
-const handleAsset = (assetType) => {
-    if (assetType == imageType) {
+    if (file.type.startsWith('image/')) {
+        console.log('image');
         image();
-    } else if (assetType == videoType) {
+    } else if (file.type == videoType) {
+        console.log('video');
         video();
-    } else if (assetType == audioType) {
+    } else if (file.type == audioType) {
+        console.log('audio');
         audio();
-    } else {
     }
 };
 
-fileInput.addEventListener("change", handleFiles);
 directive.on("upload", handleAsset);
