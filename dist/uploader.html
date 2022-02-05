@@ -38,25 +38,24 @@
                         </div>
                       </div>
                       <input
-                      accept="image/*, .mp4, .mp3"
+                     
+                      accept="image/*,.mp4,.mp3"
                       class='--hidden'
-                      data-bind=
-                        '
-                            {"ref": "image.image", "refs": {
-                                "ipfs": "upload.ipfs",
-                                "metadata": "upload.metadata"
-                            }}, 
-                            {"ref": "video.video", "refs": {
+                      data-bind='{"ref": "image.image", "refs": {
                                 "ipfs": "upload.ipfs",
                                 "metadata": "upload.metadata"
                             }},
-                            {"ref": "audio.audio", "refs": {
+                                {"ref": "video.video", "refs": {
                                 "ipfs": "upload.ipfs",
                                 "metadata": "upload.metadata"
-                            }}
-                        '
-                      data-change='upload.image, upload.video, upload.audio'
+                            }},
+                                {"ref": "audio.audio", "refs": {
+                                "ipfs": "upload.ipfs",
+                                "metadata": "upload.metadata"
+                            }}'
+                      data-change='upload'
                       data-click='upload.reset'
+                      id="input"
                       type='file'
                       multiple
                      >
